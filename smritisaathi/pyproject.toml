@@ -1,0 +1,21 @@
+[project]
+name = "smritisaathi"
+version = "0.1.0"
+description = "Voice-first multilingual cognitive gaming platform for elderly dementia care"
+requires-python = ">=3.11"
+dependencies = ["flet>=1.0", "flet-audio", "flet-stt", "httpx"]
+
+[tool.flet]
+product = "SmritiSaathi"
+org = "edu.rbu.smritisaathi"
+
+# flet-stt setup (all three are required for APK builds, per its docs)
+[tool.flet.android.permission]
+"android.permission.RECORD_AUDIO" = true
+"android.permission.INTERNET" = true
+
+[tool.flet.app]
+exclude = ["flet_stt"]
+
+[tool.flet.dev_packages]
+flet-stt = "flet_stt"
